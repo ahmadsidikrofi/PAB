@@ -15,33 +15,31 @@ const App = () => {
   return (
     <>
       <div className="content">
-        <div className="container">
-          <h2 className="mb-5">PAB Web Service</h2>
-          <div className="table-responsive">
+        <h2 className="mb-5 fs-3">PAB Web Service</h2>
+        <div className="table-responsive rounded-5">
 
-            <table className="table table-striped table-dark custom-table">
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th scope="col">Nama</th>
-                  <th scope="col">Nim</th>
-                  <th scope="col">Email</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  datas.map((data, i) => (
-                    <tr key={data.id}>
-                      <td>{i+1}</td>
-                      <td>{data.nama}</td>
-                      <td><a href="#">{data.nim}</a></td>
-                      <td>{data.email}</td>
-                    </tr>
-                  ))
-                }
-              </tbody>
-            </table>
-          </div>
+          <table className="table table-striped table-dark custom-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Nim</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                datas.map((data, i) => (
+                  <tr key={data.id}>
+                    <td>{i + 1}</td>
+                    <td>{data.nama}</td>
+                    <td><a href="#">{data.nim}</a></td>
+                    <td>{data.email}</td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
         </div>
 
       </div>
