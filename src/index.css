@@ -32,13 +32,22 @@ a {
 
 a,
 a:hover {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .content {
-  padding: 7rem 0;
+  padding: 3rem 0;
   margin: 45px;
+}
 
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 3rem 0;
+    margin: 10px;
+  }
+  .custom-table thead th {
+    padding: 17px
+  }
 }
 
 h2 {
@@ -54,6 +63,7 @@ h2 {
 .custom-table thead tr,
 .custom-table thead th {
   padding-bottom: 30px;
+  padding-top: 30px;
   text-align: center;
   border-top: none;
   border-bottom: none !important;

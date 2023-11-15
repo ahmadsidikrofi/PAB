@@ -24,8 +24,8 @@ const App = () => {
     <>
       <div className="content">
         <h2 className="mb-5 fs-3">PAB Web Service</h2>
-        <div className="table-responsive " style={{ overflowX: "auto", }}>
-          <table className="table table-striped table-dark custom-table ">
+        <div className="table-responsive rounded-4" style={{ overflowX: "auto", }}>
+          <table className="table table-striped table-dark custom-table">
             <thead>
               <tr>
                 <th>No</th>
