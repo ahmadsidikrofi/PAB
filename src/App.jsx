@@ -1,10 +1,12 @@
 import axios from "axios";
-import { } from "react";
 import { useState, useEffect } from "react";
+import Pagination from "./Pagination";
 
 const App = () => {
   const [datas, setDatas] = useState([])
   // const date = new Date
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentDataMahasiswa, setCurrentDataMahasiswa] = useState(10);
 
   useEffect(() => {
     const getMahasiswaData = async () => {
@@ -13,6 +15,11 @@ const App = () => {
     }
     getMahasiswaData()
   }, [])
+
+  const lastPage = currentPage * currentDataMahasiswa;
+  const firstPage = lastPage - currentDataMahasiswa;
+  const sliceData = datas.slice(firstPage, lastPage);
+
   return (
     <>
       <div className="content">
@@ -30,9 +37,9 @@ const App = () => {
             </thead>
             <tbody>
               {
-                datas.map((data, i) => (
+                sliceData.map((data, i) => (
                   <tr key={data.id}>
-                    <td>{i + 1}</td>
+                    <td>{i + 1 + firstPage}</td>
                     <td>{data.nama}</td>
                     <td><a href="#">{data.nim}</a></td>
                     <td>{data.email}</td>
@@ -47,7 +54,11 @@ const App = () => {
             </tbody>
           </table>
         </div>
-
+        <Pagination totalDataMahasiswa={datas.length} 
+          currentDataMahasiswa={currentDataMahasiswa}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+        />
       </div>
     </>
   );
